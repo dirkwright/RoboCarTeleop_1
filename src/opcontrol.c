@@ -2,8 +2,8 @@
 
 #include "main.h"
 // Mr Wright Was Here
-// James was here.
-
+// Mekhi is here
+//James was here
 void operatorControl() {
 	while (1) {
 		printf("Hello PROS User!\n");
