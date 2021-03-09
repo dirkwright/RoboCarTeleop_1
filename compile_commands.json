@@ -27,6 +27,10 @@
             "C:/Users/mekhi/AppData/Local/Temp/tmpr_5dm4_b/auto.c.o",
             "src\\auto.c"
         ],
+<<<<<<< HEAD
+        "directory": "/Users/NonetKnowlesMac/github/RoboCarTeleop_1",
+        "file": "src/opcontrol.c"
+=======
         "directory": "C:\\Users\\mekhi\\documents\\RoboCarTeleop_1",
         "file": "src\\auto.c"
     },
@@ -91,5 +95,6 @@
         ],
         "directory": "C:\\Users\\mekhi\\documents\\RoboCarTeleop_1",
         "file": "src\\opcontrol.c"
+>>>>>>> 08605ab4d1cffcccd64c2c41e8d3291da5e6d97e
     }
 ]
