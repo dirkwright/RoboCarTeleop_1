@@ -8,7 +8,7 @@ int Kp = 1;
 
 
 void steeringSet(int speed)
-{ motorSet(5, speed); }
+{ motorSet(3, speed); }
 
 
 void elbowHold(int elbowTarget){
