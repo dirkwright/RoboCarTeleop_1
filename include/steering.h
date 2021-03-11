@@ -15,7 +15,7 @@ void elbowHold(int elbowTarget){
 
  printf("The steering encoder value is %d\n", encoderGet(steeringEncoder));
  int counts = encoderGet(steeringEncoder);
- int error = (joystickGetDigital(1) - counts);
+ int error = (joystickGetAnalog(1, 1) - counts);
  steeringSet(Kp * error);
  }
 
