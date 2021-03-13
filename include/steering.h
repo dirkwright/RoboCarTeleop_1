@@ -11,7 +11,7 @@ void steeringSet(int speed)
 { motorSet(3, speed); }
 
 
-void elbowHold(int elbowTarget){
+void steeringAngle(int steeringAngle){
 
  printf("The steering encoder value is %d\n", encoderGet(steeringEncoder));
  int counts = encoderGet(steeringEncoder);

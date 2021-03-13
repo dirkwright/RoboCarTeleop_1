@@ -6,6 +6,7 @@
 
 #include <API.h>
 Encoder steeringEncoder;
+Encoder driveEncoder;
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
