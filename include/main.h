@@ -7,8 +7,12 @@
 #include <API.h>
 Encoder steeringEncoder;
 Encoder driveEncoder;
+<<<<<<< HEAD
 Ultrasonic rightSonar;
 
+=======
+Ultrasonic wallSensor;
+>>>>>>> cbd830c73b92dce2480fc33d168581f8576b70d6
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
 extern "C" {

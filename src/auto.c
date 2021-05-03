@@ -1,14 +1,6 @@
-/** @file auto.c
- * @brief File for autonomous code
- *
- * This file should contain the user autonomous() function and any functions related to it.
- *
- * PROS contains FreeRTOS (http://www.freertos.org) whose source code may be
- * obtained from http://sourceforge.net/projects/freertos/files/ or on request.
- */
 
-#include "main.h"
 
+<<<<<<< HEAD
 
 
 /*
@@ -25,5 +17,34 @@
  * The autonomous task may exit, unlike operatorControl() which should never exit. If it does
  * so, the robot will await a switch to another mode or disable/enable cycle.
  */
+=======
+#include "main.h"
+#include "chassis.h"
+#include "steering.h"
+>>>>>>> cbd830c73b92dce2480fc33d168581f8576b70d6
 void autonomous() {
-}
+
+ int ultraRange = 0;
+
+
+    while(1){
+
+      delay(20);
+
+      ultraRange=ultrasonicGet(wallSensor);
+      if(ultraRange<0 || ultraRange>70){
+        motorSet(LEFT,50);
+        motorSet(RIGHT,50);
+      }
+      else if(ultraRange>(ultraFollow+4)){
+        motorSet(LEFT,35);
+        motorSet(RIGHT,-35);
+      }
+      else if(ultraRange<(ultraFollow-4)){
+        motorSet(LEFT,-35);
+        motorSet(RIGHT,35);
+      }
+
+      else{
+        motorStopAll();
+      }
