@@ -2,6 +2,7 @@
 #include "main.h"
 #include "chassis.h"
 #include "steering.h"
+#include "auto.h"
 
 void operatorControl() {
 
@@ -18,6 +19,10 @@ void operatorControl() {
 
 
 		loopCount = loopCount + 1 ;
+	}
+
+	if(joystickGetDigital(1, 8, JOY_UP)){
+		autonomous();
 	}
 
 

@@ -18,11 +18,11 @@ void autonomous() {
        }
        else if(ultraRange > 20 && ultraRange < 50){
          motorSet(-35, 35);
-         steeringSet(10);
+         steeringAngle(10);
        }
        else if(ultraRange > 10 && ultraRange < 20){
          motorSet(-35, 35);
-         steeringSet(-10);
+         steeringAngle(-10);
 
        }
 
