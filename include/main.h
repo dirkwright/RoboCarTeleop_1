@@ -7,6 +7,7 @@
 #include <API.h>
 Encoder steeringEncoder;
 Encoder driveEncoder;
+Ultrasonic rightSonar;
 
 // Allow usage of this file in C++ programs
 #ifdef __cplusplus
