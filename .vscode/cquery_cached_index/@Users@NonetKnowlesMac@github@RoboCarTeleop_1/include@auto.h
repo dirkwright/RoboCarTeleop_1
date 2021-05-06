@@ -4,25 +4,43 @@
 #include "chassis.h"
 #include "steering.h"
 
-void autonomous() {
+void auton() {
 
   int ultraRange;
 
 
-       delay(20);
+
 
        ultraRange = ultrasonicGet(wallSensor);
-       if(ultraRange < 0 || ultraRange > 70){
-         motorSet(-50, 50);
+
+       if(ultraRange < 1 || ultraRange > 70){
+         printf("The distance to wall is %d \n", ultraRange);
+         chassisSet(-50, 50);
+         steeringHold(0);
+         printf("The steering is set to 0");
 
        }
-       else if(ultraRange > 20 && ultraRange < 50){
-         motorSet(-35, 35);
-         steeringAngle(10);
+
+       else if (ultraRange > 20 && ultraRange < 30){
+         printf("The distance to the wall is %d \n", ultraRange);
+         chassisSet(-40, 40);
+         steeringHold(0);
+         printf("The steering is set to 0");
        }
-       else if(ultraRange > 10 && ultraRange < 20){
-         motorSet(-35, 35);
-         steeringAngle(-10);
+
+       else if(ultraRange > 30 && ultraRange < 50){
+         printf("The distance to wall is %d \n", ultraRange);
+         chassisSet(-40, 40);
+         steeringHold(160);
+         printf("The steering is set to 70");
+
+       }
+       else if(ultraRange > 2 && ultraRange < 20){
+         printf("The distance to wall is %d \n", ultraRange);
+         chassisSet(-40, 40);
+         steeringHold(-160);
+         printf("The steering is set to -70");
+
 
        }
 

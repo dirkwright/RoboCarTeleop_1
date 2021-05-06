@@ -7,15 +7,16 @@
 int Kp = 1;
 
 
-void steeringSet(int speed)
-{ motorSet(3, speed); }
+void steeringSet(int speed){
+  motorSet(3, speed);
+}
 
 
-void steeringAngle(int steeringAngle){
+void steeringHold(int steeringAngle){
 
  printf("The steering encoder value is %d\n", encoderGet(steeringEncoder));
  int counts = encoderGet(steeringEncoder);
- int error = (joystickGetAnalog(1, 1) - counts);
+ int error = steeringAngle - counts;
  steeringSet(Kp * error);
  }
 

@@ -4,6 +4,8 @@
 #include "API.h"
 
 // Sets the speeds of the left and right wheels of the chassis
+// chassisSet(+, -) is backwards
+//chassisSet(-, +) is forwards
 
 void chassisSet(int left, int right) {
   motorSet(2, left);
