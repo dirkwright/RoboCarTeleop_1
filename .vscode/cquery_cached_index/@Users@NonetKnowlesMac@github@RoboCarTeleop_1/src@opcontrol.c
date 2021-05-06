@@ -27,7 +27,7 @@ void operatorControl() {
 		auton();
 	}
 
-	delay(100);
+	delay(50);
 }
 
 
