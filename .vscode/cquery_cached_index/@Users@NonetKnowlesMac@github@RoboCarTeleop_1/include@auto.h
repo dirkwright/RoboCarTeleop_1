@@ -7,6 +7,8 @@
 void auton() {
 
   int ultraRange;
+  int k1 = -2000;
+  int k2 = 1;
 
 
 
@@ -23,22 +25,22 @@ void auton() {
 
        else if (ultraRange > 20 && ultraRange < 30){
          printf("The distance to the wall is %d \n", ultraRange);
-         chassisSet(-40, 40);
+         chassisSet(-50, 50);
          steeringHold(0);
          printf("The steering is set to 0");
        }
 
-       else if(ultraRange > 30 && ultraRange < 50){
+       else if(ultraRange > 30 && ultraRange < 70){
          printf("The distance to wall is %d \n", ultraRange);
-         chassisSet(-40, 40);
-         steeringHold(160);
+         chassisSet(-60, 60);
+         steeringHold((k2)/(ultraRange));
          printf("The steering is set to 70");
 
        }
        else if(ultraRange > 2 && ultraRange < 20){
          printf("The distance to wall is %d \n", ultraRange);
-         chassisSet(-40, 40);
-         steeringHold(-160);
+         chassisSet(-60, 60);
+         steeringHold((k1)/(ultraRange));
          printf("The steering is set to -70");
 
 
