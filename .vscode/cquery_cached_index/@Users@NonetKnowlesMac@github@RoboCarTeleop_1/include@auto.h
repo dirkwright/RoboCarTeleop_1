@@ -10,8 +10,8 @@ void auton() {
   int k1 = -2000;
   int k2 = 1;
 
-int x ; //x should be the length of the straight in encoder counts
-int y ; //y should be the length of the turn in encoder counts
+int x = 700; //x should be the length of the straight in encoder counts
+int y = 1400; //y should be the length of the turn in encoder counts
 
 //I think 1 foot = about 450 encoder counts, but maybe check this.
 
@@ -19,18 +19,24 @@ int y ; //y should be the length of the turn in encoder counts
 int distance = encoderGet(driveEncoder);
 
 if(distance > 0 && distance < x){
-  printf("The distance is %d \n", distance);
-  chassisSet(-120, 120);
+  printf("The driveEncoder is %d \n", distance);
+  chassisSet(-80, 80);
 }
+
+
 else if (distance < y && distance > x){
-  chassisSet(-60, 60);
-  printf("The distance is %d \n", distance);
+  chassisSet(-50, 50);
+  printf("The driveEncoder is %d \n", distance);
 
 }
 else if (distance > y){
-  encoderReset(steeringEncoder);
-  printf("Reset encoder");
+  encoderReset(driveEncoder);
+  printf("The driveEncoder is %d \n", distance);
 }
+//else {
+  //chassisSet(-50, 50);
+//  printf("The driveEncoder is %d \n", distance);
+//}
 
 
 
@@ -40,7 +46,7 @@ else if (distance > y){
          printf("The distance to wall is %d \n", ultraRange);
          //chassisSet(-50, 50);
          steeringHold(0);
-         printf("The steering is set to 0");
+         //printf("The steering is set to 0");
 
        }
 
@@ -48,21 +54,21 @@ else if (distance > y){
          printf("The distance to the wall is %d \n", ultraRange);
          //chassisSet(-50, 50);
          steeringHold(0);
-         printf("The steering is set to 0");
+         //printf("The steering is set to 0");
        }
 
        else if(ultraRange > 30 && ultraRange < 70){
          printf("The distance to wall is %d \n", ultraRange);
          //chassisSet(-60, 60);
          steeringHold((k2)/(ultraRange));
-         printf("The steering is set to 70");
+         //printf("The steering is set to 70");
 
        }
        else if(ultraRange > 2 && ultraRange < 20){
          printf("The distance to wall is %d \n", ultraRange);
          //chassisSet(-60, 60);
          steeringHold((k1)/(ultraRange));
-         printf("The steering is set to -70");
+         //printf("The steering is set to -70");
 
 
        }

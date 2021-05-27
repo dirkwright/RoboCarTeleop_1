@@ -14,7 +14,7 @@ void steeringSet(int speed){
 
 void steeringHold(int steeringAngle){
 
- printf("The steering encoder value is %d\n", encoderGet(steeringEncoder));
+ //printf("The steering encoder value is %d\n", encoderGet(steeringEncoder));
  int counts = encoderGet(steeringEncoder);
  int error = steeringAngle - counts;
  steeringSet(Kp * error);
